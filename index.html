@@ -97,7 +97,7 @@
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                <span class="badge badge-sm indicator-item">8</span>
+                <span class="badge badge-sm indicator-item" id="cart-count-show">0</span>
               </div>
             </div>
             <div
@@ -105,10 +105,10 @@
               class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
             >
               <div class="card-body">
-                <span class="text-lg font-bold">8 Items</span>
-                <span class="text-info">Subtotal: $999</span>
+                <span class="text-lg font-bold" id="cart-count-items">0 Items</span>
+                <span class="text-info">Subtotal: $<span id="total-cart">000</span></span>
                 <div class="card-actions">
-                  <button class="btn btn-primary btn-block">View cart</button>
+                  <button class="btn btn-primary btn-block" id="view-cart-btn">View cart</button>
                 </div>
               </div>
             </div>
@@ -119,33 +119,33 @@
 
     <!-- banner area -->
     <div
-      class="hero min-h-[700px]"
+      class="hero min-h-screen"
       style="background-image: url(./assets/banner.jpg)"
     >
       <div class="hero-overlay"></div>
       <div class="hero-content text-neutral-content text-center">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-4xl font-bold leading-14">
-            <span class="mb-2.5 block">Start your Journey As</span>
+        <div class="max-w-lg">
+          <h1 class="mb-5 text-5xl font-bold leading-14">
+            <span class="mb-2.5 block"><span class="skeleton skeleton-text">Start your Journey As</span></span>
             <span>
               <span class="text-rotate">
                 <span>
-                  <span class="bg-primary text-primary-content px-2 rounded-sm"
+                  <span class=" text-primary px-2 rounded-sm"
                     >Influencer</span
                   >
 
                   <span
-                    class="bg-secondary text-secondary-content px-2 rounded-sm"
+                    class=" text-secondary px-2 rounded-sm"
                     >Managers</span
                   >
-                  <span class="bg-accent text-accent-content px-2 rounded-sm"
+                  <span class=" text-accent px-2 rounded-sm"
                     >Designers</span
                   >
                 </span>
               </span>
             </span>
           </h1>
-          <p class="mb-5">
+          <p class="mb-5 text-base-300">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
@@ -160,7 +160,7 @@
     <section class="py-10 md:py-[60px] lg:py-20">
       <!-- products info -->
       <div class="text-center w-[90%] mx-auto lg:max-w-md space-y-5">
-        <h4 class="text-5xl font-bold text-neutral">Our Products</h4>
+        <h4 class="text-5xl font-bold text-neutral"><span class="skeleton skeleton-text">Our Products</span></h4>
         <p class="text-lg font-medium">
           Gadget house provides high quality products buy your own choice.
           Gadget house is very freindly with customers.
@@ -170,7 +170,7 @@
       <!-- products container -->
 
       <section
-        class="grid gap-5 grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 w-[90%] mx-auto max-w-7xl  py-10"
+        class="grid gap-5 grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 w-[90%] mx-auto max-w-7xl pt-10 lg:pt-20"
       id="products-container">
         <!-- card -->
         <div class="card  shadow-sm relative">
@@ -190,7 +190,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">1000</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -211,7 +211,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">133</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -232,7 +232,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">3570</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -253,7 +253,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">10000</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -274,7 +274,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">700</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -295,7 +295,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">355</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -316,7 +316,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">25000</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -337,7 +337,7 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">267</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
@@ -358,13 +358,106 @@
             </p>
             <p class="text-2xl font-bold">$<span class="products-price">200</span></p>
             <div class="card-actions justify-end">
-              <button class="buy-btn btn btn-primary">Buy Now</button>
+              <button class="buy-btn btn btn-primary">Add to Cart</button>
             </div>
           </div> 
         </div>
           
       </section>
     </section>
+
+
+    <!-- user added carts title -->
+
+    <div class="text-center w-[90%] mx-auto mb-12 lg:max-w-md space-y-5">
+        <h4 class="text-5xl font-bold text-neutral"><span class="skeleton skeleton-text">Your Carts</span></h4>
+        <p class="text-lg font-medium">
+      See your cart products, those you have added to your cart order, very soon, before they become out of stock
+        </p>
+      </div>
+
+<!-- user products  cart  -->
+
+
+<section class="w-[90%] flex items-center flex-col gap-12 lg:gap-12 lg:flex-row  lg:justify-between lg:items-center mx-auto  py-10 md:py-[60px] lg:py-20  max-w-7xl " id="user-cart">
+
+  <!-- cart area left side -->
+  <!-- user added carts -->
+   <div class="w-[90%]  max-w-[600px]" id="user-products-cart-container">
+   <!-- user added cart products  -->
+    <!-- <div class="card card-side   bg-base-100 shadow-sm">
+  <figure>
+    <img
+      src="./assets/camera.png"
+      alt="Movie" />
+  </figure>
+  <div class="card-body">
+    <div class="flex items-center gap-5"><div class="inline-grid *:[grid-area:1/1]">
+  <div class="status status-warning animate-ping"></div>
+  <div class="status status-warning"></div>
+</div><span class="text-lg font-bold">Your Product 😍</span></div> 
+    <h2 class="font-bold text-2xl">Drone </h2>
+    <p class="flex justify-between text-lg">price: <span id="products-price-cart">0</span></p>
+
+    <div class="card-actions justify-end">
+      <button class="cart-delete-btn btn btn-primary" >Remove</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="skeleton w-full h-96 p-2 lg:max-w-2xl  flex justify-center items-center"><div class="text-center"><span class="skeleton skeleton-text text-2xl font-semibold">You Cart Products are empthy</span><span class="text-2xl">🫡</span></div></div>
+
+   </div>
+
+   <!-- cart area right side -->
+
+   <!-- user total price and quantity -->
+    <div class=" w-[90%] max-w-lg  space-y-10" >
+      <!-- user total product price -->
+      <div class="card mx-auto  lg:max-w-md xl:max-w-lg bg-base-100 shadow-sm" id="user-order-dashboard">
+  <div class="card-body">
+
+    <div class="flex justify-between">
+      <h2 class="text-3xl font-bold"><span class="skeleton skeleton-text">Total Price:</span></h2>
+      <span class="text-xl font-medium">$ <span id="id="user-total-price"">0</span></span>
+      
+    </div>
+   
+ <ul id="user-order-list" class="w-full">
+
+<!-- here list item will append-->
+<li class="flex justify-between text-lg font-medium"><span>Name</span> <span>price</span></li> 
+      </ul>
+  </div>
+
+</div>
+
+<!-- user order submit form -->
+ <div class="card bg-base-100 max-w-lg mx-auto shadow-[0_0_5px_#ddd]">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          
+          <label class="label">Name</label>
+          <input type="text" class="input w-full" placeholder="Your Name" id="user-order-name"/>
+          <label class="label">Email</label>
+          <input type="email" class="input w-full" placeholder="Email" id="user-order-email"/>
+          <label class="label">Address</label>
+          <input type="text" class="input w-full" placeholder="Your address" id="user-order-address" />
+       <fieldset class="fieldset bg-base-100 w-full  p-4">
+  <label class="label">
+    <input type="checkbox" checked="checked" class="checkbox" id="cashon-check"/>
+     Cash On Delivery
+  </label>
+</fieldset>
+          <button class="btn btn-primary mt-4" id="order-btn">Order Now</button>
+        </fieldset>
+      </div>
+    </div> 
+</div>
+
+</section>
+
+
 <script src="./scripts/helper.js"></script>
 <script src="./scripts/card-hover.js"></script>
 <script src="./scripts/buy.js"></script>
