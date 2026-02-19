@@ -1,31 +1,32 @@
 //Products add to cart
 
+const cardParentGet = getElement("products-container");
+let count = 0;
+cardParentGet.addEventListener("click", function (event) {
+  const clickedButton = event.target;
+  if (clickedButton.classList.contains("buy-btn")) {
+    const mainProductCard = clickedButton.parentNode.parentNode.parentNode;
+    const productDetailsCard = clickedButton.parentNode.parentNode;
 
-const cardParentGet=getElement('products-container')
+    const productImg = mainProductCard.children[0].children[0];
+    const productImgSrc = productImg.getAttribute("src");
 
-cardParentGet.addEventListener('click',function(event){
-const clickedButton=event.target
-if(clickedButton.classList.contains('buy-btn')){
+    const productNameHead = productDetailsCard.children[0];
+    const productName = productNameHead.innerText;
+    const productPrice =
+      productNameHead.nextElementSibling.nextElementSibling.children[0]
+        .innerText;
+    const productPriceNumber = numberConverter(productPrice);
 
-const mainProductCard=clickedButton.parentNode.parentNode.parentNode
-const productDetailsCard=clickedButton.parentNode.parentNode
+    const cartDataParent = getElement("user-products-cart-container");
+    const cartDataParentSkeletonChild = getElement("skeleton-container");
+    const getUserCartListDashboard = getElement("user-order-dashboard");
+    const getUserCartListUl = getElement("user-order-list");
+    const cartIcon = getElement("cart-count-show");
+    const cartIconDeep = getElement("cart-count-items");
 
-const productImg=mainProductCard.children[0].children[0]
-const productImgSrc=productImg.getAttribute('src')
-
-const productNameHead=productDetailsCard.children[0]
-const productName=productNameHead.innerText
-const productPrice=productNameHead.nextElementSibling.nextElementSibling.children[0].innerText
-const productPriceNumber=numberConverter(productPrice)
-
-const cartDataParent=getElement('user-products-cart-container')
-const cartDataParentSkeletonChild=getElement('skeleton-container')
-const getUserCartListDashboard=getElement('user-order-dashboard')
-const getUserCartListUl=getElement('user-order-list')
-
-
-const userCartDiv=document.createElement('div')
-userCartDiv.innerHTML=`
+    const userCartDiv = document.createElement("div");
+    userCartDiv.innerHTML = `
     <div class="card card-side   bg-base-100 shadow-sm"> 
   <figure>
     <img
@@ -45,16 +46,17 @@ userCartDiv.innerHTML=`
   </div>
 </div> 
 
-`
-
-
-console.log(setTotalTk(productPriceNumber))
-cartDataParent.appendChild(userCartDiv)
-cartDataParentSkeletonChild.classList.add('hidden')
-
-}
-
-})
-
-
-
+`;
+    count++;
+    cartIcon.innerText = count;
+    cartIconDeep.innerText = count;
+    setTotalTk(productPriceNumber);
+    cartDataParent.appendChild(userCartDiv);
+    cartDataParentSkeletonChild.classList.add("hidden");
+    const li = document.createElement("li");
+    li.innerHTML = `
+<li><div class="flex justify-between text-lg font-medium"><span>${productName}</span> <span>${productPriceNumber}</span></div> </li>
+`;
+    getUserCartListUl.appendChild(li);
+  }
+});

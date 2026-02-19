@@ -97,7 +97,7 @@
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                <span class="badge badge-sm indicator-item" id="cart-count-show">0</span>
+                <span class="badge badge-sm text-warning indicator-item" id="cart-count-show">0</span>
               </div>
             </div>
             <div
@@ -369,7 +369,7 @@
 
     <!-- user added carts title -->
 
-    <div class="text-center w-[90%] mx-auto mb-12 lg:max-w-md space-y-5">
+    <div class="text-center w-[95%] mx-auto mb-12 lg:max-w-md space-y-5">
         <h4 class="text-5xl font-bold text-neutral"><span class="skeleton skeleton-text">Your Carts</span></h4>
         <p class="text-lg font-medium">
       See your cart products, those you have added to your cart order, very soon, before they become out of stock
@@ -379,27 +379,14 @@
 <!-- user products  cart  -->
 
 
-<section class="w-[90%] flex items-center flex-col gap-12 lg:gap-12 lg:flex-row  lg:justify-between lg:items-center mx-auto  py-10 md:py-[60px] lg:py-20  max-w-7xl " id="user-cart">
-
-  <!-- cart area left side -->
-  <!-- user added carts -->
-   <div class="w-[90%]  max-w-[600px]" id="user-products-cart-container">
-   <!-- user added cart products  -->
-
-
-<div class="skeleton w-full h-96 p-2 lg:max-w-2xl  flex justify-center items-center" id="skeleton-container"><div class="text-center"><span class="skeleton skeleton-text text-2xl font-semibold">You Cart Products are empthy</span><span class="text-2xl">🫡</span></div></div>
-
-   </div>
-
-   <!-- cart area right side -->
-
-   <!-- user total price and quantity -->
-    <div class=" w-[90%] max-w-lg  space-y-10" >
+<section class="w-[95%]  mx-auto pt-10 md:pt-[60px] lg:pt-20  max-w-7xl " id="user-cart">
+  <!-- user total price and quantity -->
+    <div class="space-y-10 lg:flex  items-center justify-between">
       <!-- user total product price -->
-      <div class="card mx-auto  lg:max-w-md xl:max-w-lg bg-base-100 shadow-sm" >
+      <div class="card mx-auto  sm:w-[90%] lg:w-[50%]  bg-base-100 shadow-sm" >
   <div class="card-body">
 
-    <div class="flex justify-between" id="user-order-dashboard">
+    <div class="flex  justify-between" id="user-order-dashboard">
       <h2 class="text-3xl font-bold"><span class="skeleton skeleton-text">Total Price:</span></h2>
       <span class="text-xl font-medium">$ <span id="user-total-price">0</span></span>
       
@@ -408,14 +395,14 @@
  <ul id="user-order-list" class="w-full">
 
 <!-- here list item will append-->
-<li class="flex justify-between text-lg font-medium"><span>Name</span> <span>price</span></li> 
+<li><div class="flex justify-between text-lg font-medium"><span>Name</span> <span>price</span></div> </li>
       </ul>
   </div>
 
 </div>
 
 <!-- user order submit form -->
- <div class="card bg-base-100 max-w-lg mx-auto shadow-[0_0_5px_#ddd]">
+ <div class="card bg-base-100  sm:w-[70%] md:[60%] lg:w-[35%] mx-auto shadow-[0_0_5px_#ddd]">
       <div class="card-body">
         <fieldset class="fieldset">
           
@@ -436,6 +423,18 @@
       </div>
     </div> 
 </div>
+
+  <!-- user added carts -->
+   <div class="  grid grid-cols-1 gap-10 lg:gap-5 lg:grid-cols-2 py-10 md:py-[60px] lg:py-20 " id="user-products-cart-container">
+   <!-- user added cart products  -->
+
+
+<div class="skeleton w-full h-96 p-2   col-span-2 flex justify-center items-center" id="skeleton-container"><div class="text-center"><span class="skeleton skeleton-text text-2xl lg:text-3xl font-semibold">You Cart Products are empthy</span><span class="text-3xl">🫡</span></div></div>
+
+   </div>
+
+
+ 
 
 </section>
 

@@ -21,6 +21,8 @@ function setTotalTk(getPrice){
   const dashBoardPrice=document.getElementById('user-total-price')
 const setTotalTk=Number(dashBoardPrice.innerText)+getPrice
 dashBoardPrice.innerText=setTotalTk
+const totalShowInCartIcon=getElement('total-cart')
+totalShowInCartIcon.innerText=setTotalTk
 }
 
 //     <div class="card card-side   bg-base-100 shadow-sm"> 
