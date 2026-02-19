@@ -67,5 +67,23 @@ userCartDiv.classList.add('cart-card')
 `;
     getUserCartListUl.appendChild(li);
     clickedButton.classList.add('already-clicked')
+    const successMessage=document.createElement('div')
+    successMessage.innerHTML=`
+    <div role="alert" class="alert alert-success alert-soft">
+  <span>Your product has been added on the cart !</span>
+</div>
+    `
+setTimeout(()=>{
+   
+const cartTitleParent= getElement('cart-area-title')
+cartTitleParent.appendChild(successMessage)
+console.log('ok')
+
+},100)
+    setTimeout(()=>{
+      const cartTitleParent= getElement('cart-area-title')
+cartTitleParent.removeChild(successMessage)
+
+    },4000)
   }
 });
