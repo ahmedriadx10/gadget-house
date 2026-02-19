@@ -48,7 +48,7 @@
       <div class="navbar bg-base-100 shadow-sm">
         <div class="flex-1">
           <a
-            class="btn btn-ghost text-lg md:text-2xl lg:text-3xl font-bold text-primary"
+            class="text-lg md:text-2xl lg:text-3xl font-bold text-primary"
             ><i class="fa-regular fa-camera"></i> Gadget House</a
           >
         </div>
@@ -173,7 +173,7 @@
         class="grid gap-5 grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 w-[90%] mx-auto max-w-7xl pt-10 lg:pt-20"
       id="products-container">
         <!-- card -->
-        <div class="card  shadow-sm relative">
+        <div class="card shadow-sm relative">
           <figure class="">
             <img
               src="./assets/action.png"
@@ -385,27 +385,9 @@
   <!-- user added carts -->
    <div class="w-[90%]  max-w-[600px]" id="user-products-cart-container">
    <!-- user added cart products  -->
-    <!-- <div class="card card-side   bg-base-100 shadow-sm">
-  <figure>
-    <img
-      src="./assets/camera.png"
-      alt="Movie" />
-  </figure>
-  <div class="card-body">
-    <div class="flex items-center gap-5"><div class="inline-grid *:[grid-area:1/1]">
-  <div class="status status-warning animate-ping"></div>
-  <div class="status status-warning"></div>
-</div><span class="text-lg font-bold">Your Product 😍</span></div> 
-    <h2 class="font-bold text-2xl">Drone </h2>
-    <p class="flex justify-between text-lg">price: <span id="products-price-cart">0</span></p>
 
-    <div class="card-actions justify-end">
-      <button class="cart-delete-btn btn btn-primary" >Remove</button>
-    </div>
-  </div>
-</div> -->
 
-<div class="skeleton w-full h-96 p-2 lg:max-w-2xl  flex justify-center items-center"><div class="text-center"><span class="skeleton skeleton-text text-2xl font-semibold">You Cart Products are empthy</span><span class="text-2xl">🫡</span></div></div>
+<div class="skeleton w-full h-96 p-2 lg:max-w-2xl  flex justify-center items-center" id="skeleton-container"><div class="text-center"><span class="skeleton skeleton-text text-2xl font-semibold">You Cart Products are empthy</span><span class="text-2xl">🫡</span></div></div>
 
    </div>
 
@@ -414,12 +396,12 @@
    <!-- user total price and quantity -->
     <div class=" w-[90%] max-w-lg  space-y-10" >
       <!-- user total product price -->
-      <div class="card mx-auto  lg:max-w-md xl:max-w-lg bg-base-100 shadow-sm" id="user-order-dashboard">
+      <div class="card mx-auto  lg:max-w-md xl:max-w-lg bg-base-100 shadow-sm" >
   <div class="card-body">
 
-    <div class="flex justify-between">
+    <div class="flex justify-between" id="user-order-dashboard">
       <h2 class="text-3xl font-bold"><span class="skeleton skeleton-text">Total Price:</span></h2>
-      <span class="text-xl font-medium">$ <span id="id="user-total-price"">0</span></span>
+      <span class="text-xl font-medium">$ <span id="user-total-price">0</span></span>
       
     </div>
    
@@ -460,7 +442,7 @@
 
 <script src="./scripts/helper.js"></script>
 <script src="./scripts/card-hover.js"></script>
-<script src="./scripts/buy.js"></script>
+<script src="./scripts/cart.js"></script>
 
   </body>
 </html>
