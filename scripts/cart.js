@@ -54,6 +54,7 @@ cardParentGet.addEventListener("click", function (event) {
 </div> 
 
 `;
+userCartDiv.classList.add('cart-card')
     count++;
     cartIcon.innerText = count;
     cartIconDeep.innerText = count;
