@@ -5,6 +5,11 @@ let count = 0;
 cardParentGet.addEventListener("click", function (event) {
   const clickedButton = event.target;
   if (clickedButton.classList.contains("buy-btn")) {
+
+    if(clickedButton.classList.contains('already-clicked')){
+      return
+    }
+
     const mainProductCard = clickedButton.parentNode.parentNode.parentNode;
     const productDetailsCard = clickedButton.parentNode.parentNode;
 
@@ -25,6 +30,8 @@ cardParentGet.addEventListener("click", function (event) {
     const cartIcon = getElement("cart-count-show");
     const cartIconDeep = getElement("cart-count-items");
 
+   
+
     const userCartDiv = document.createElement("div");
     userCartDiv.innerHTML = `
     <div class="card card-side   bg-base-100 shadow-sm"> 
@@ -38,7 +45,7 @@ cardParentGet.addEventListener("click", function (event) {
   <div class="status status-warning"></div>
 </div><span class="text-lg font-bold">Your Product 😍</span></div> 
     <h2 class="font-bold text-2xl">${productName}</h2>
-    <p class="flex justify-between text-lg">price: <span id="products-price-cart">$${productPriceNumber}</span></p>
+    <p class="flex justify-between text-lg">price: <span>$${productPrice}</span></p>
 
     <div class="card-actions justify-end">
       <button class="cart-delete-btn btn btn-primary" >Remove</button>
@@ -55,8 +62,9 @@ cardParentGet.addEventListener("click", function (event) {
     cartDataParentSkeletonChild.classList.add("hidden");
     const li = document.createElement("li");
     li.innerHTML = `
-<li><div class="flex justify-between text-lg font-medium"><span>${productName}</span> <span>${productPriceNumber}</span></div> </li>
+<li><div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='plus-btn btn h-5 w-5'><i class="fa-solid fa-plus"></i></button><button class='minus-btn btn h-5 w-5'><i class="fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div> </li>
 `;
     getUserCartListUl.appendChild(li);
+    clickedButton.classList.add('already-clicked')
   }
 });

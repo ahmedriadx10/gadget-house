@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,7 +108,7 @@
                 <span class="text-lg font-bold" id="cart-count-items">0 Items</span>
                 <span class="text-info">Subtotal: $<span id="total-cart">000</span></span>
                 <div class="card-actions">
-                  <button class="btn btn-primary btn-block" id="view-cart-btn">View cart</button>
+                  <a class="btn btn-primary btn-block" href="#user-cart">View cart</a>
                 </div>
               </div>
             </div>
@@ -388,14 +388,14 @@
 
     <div class="flex  justify-between" id="user-order-dashboard">
       <h2 class="text-3xl font-bold"><span class="skeleton skeleton-text">Total Price:</span></h2>
-      <span class="text-xl font-medium">$ <span id="user-total-price">0</span></span>
+      <span class="text-xl font-bold">$ <span id="user-total-price">0</span></span>
       
     </div>
    
- <ul id="user-order-list" class="w-full">
+ <ul id="user-order-list" class="w-ful space-y-2">
 
 <!-- here list item will append-->
-<li><div class="flex justify-between text-lg font-medium"><span>Name</span> <span>price</span></div> </li>
+<li><div class="flex justify-between text-lg font-semibold"><span>Name</span> <span>Quantity</span> <span>price</span></div> </li>
       </ul>
   </div>
 
