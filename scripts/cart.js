@@ -25,7 +25,7 @@ cardParentGet.addEventListener("click", function (event) {
 
     const cartDataParent = getElement("user-products-cart-container");
     const cartDataParentSkeletonChild = getElement("skeleton-container");
-    const getUserCartListDashboard = getElement("user-order-dashboard");
+    // const getUserCartListDashboard = getElement("user-order-dashboard");
     const getUserCartListUl = getElement("user-order-list");
     const cartIcon = getElement("cart-count-show");
     const cartIconDeep = getElement("cart-count-items");
@@ -45,7 +45,7 @@ cardParentGet.addEventListener("click", function (event) {
   <div class="status status-warning"></div>
 </div><span class="text-lg font-bold">Your Product 😍</span></div> 
     <h2 class="font-bold text-2xl">${productName}</h2>
-    <p class="flex justify-between text-lg">price: <span>$${productPrice}</span></p>
+    <p class="flex justify-between text-lg">price: <span>$<span>${productPrice}</span></span></p>
 
     <div class="card-actions justify-end">
       <button class="cart-delete-btn btn btn-primary" >Remove</button>
@@ -63,7 +63,7 @@ userCartDiv.classList.add('cart-card')
     cartDataParentSkeletonChild.classList.add("hidden");
     const li = document.createElement("li");
     li.innerHTML = `
-<li><div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='plus-btn btn h-5 w-5'><i class="fa-solid fa-plus"></i></button><button class='minus-btn btn h-5 w-5'><i class="fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div> </li>
+<div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='plus-btn btn h-5 w-5'><i class="fa-solid fa-plus"></i></button><button class='minus-btn btn h-5 w-5'><i class="fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div>
 `;
     getUserCartListUl.appendChild(li);
     clickedButton.classList.add('already-clicked')
@@ -77,7 +77,7 @@ setTimeout(()=>{
    
 const cartTitleParent= getElement('cart-area-title')
 cartTitleParent.appendChild(successMessage)
-console.log('ok')
+
 
 },100)
     setTimeout(()=>{

@@ -25,6 +25,14 @@ const totalShowInCartIcon=getElement('total-cart')
 totalShowInCartIcon.innerText=setTotalTk
 }
 
+function reduceTkFromDashBoard(getTk){
+    const dashBoardPrice=document.getElementById('user-total-price')
+dashBoardPrice.innerText=getTk
+const totalShowInCartIcon=getElement('total-cart')
+totalShowInCartIcon.innerText=getTk
+}
+
+
 //     <div class="card card-side   bg-base-100 shadow-sm"> 
 //   <figure>
 //     <img
