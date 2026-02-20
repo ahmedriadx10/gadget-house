@@ -445,32 +445,47 @@
     >
       <!-- user total price and quantity -->
       <div class="space-y-10 lg:flex items-center justify-between">
-        <!-- user total product price -->
-        <div class="card mx-auto sm:w-[90%] lg:w-[50%] bg-base-100 shadow-sm">
-          <div class="card-body">
-            <div class="flex justify-between" id="user-order-dashboard">
-              <h2 class="text-3xl font-bold" id="dashboard-total-head">
-                <span class="skeleton skeleton-text">Total Price:</span>
-              </h2>
-              <span class="text-xl font-bold"
-                >$ <span id="user-total-price">0</span></span
-              >
-            </div>
+        <!-- left side -->
+        <div class="w-[90%] mx-auto lg:mx-0 lg:w-[60%]">
+          <div class="card mx-auto w-full bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex justify-between" id="user-order-dashboard">
+                <h2 class="text-3xl font-bold" id="dashboard-total-head">
+                  <span class="skeleton skeleton-text">Total Price:</span>
+                </h2>
+                <span class="text-xl font-bold"
+                  >$ <span id="user-total-price">0</span></span
+                >
+              </div>
 
-            <ul id="user-order-list" class="w-ful space-y-2">
-              <!-- here list item will append-->
-              <li>
-                <div class="flex justify-between text-lg font-semibold">
-                  <span>Name</span> <span>Quantity</span> <span>price</span>
-                </div>
-              </li>
-            </ul>
+              <ul id="user-order-list" class="w-ful space-y-2">
+                <!-- here list item will append-->
+                <li>
+                  <div class="flex justify-between text-lg font-semibold">
+                    <span>Name</span> <span>Quantity</span> <span>price</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- user order progress -->
+          <div class="card bg-base-100 shadow-[0_0_10px_#ddd] mt-10">
+            <div class="card-body">
+              <div
+                class="radial-progress"
+                style="--value: 90; --size: 12rem; --thickness: 2rem"
+                role="progressbar"
+              >
+                90%
+              </div>
+            </div>
           </div>
         </div>
-
+        <!-- user cart order progress  -->
         <!-- user order submit form -->
         <div
-          class="card bg-base-100 sm:w-[70%] md:[60%] lg:w-[35%] mx-auto shadow-[0_0_5px_#ddd]"
+          class="card bg-base-100 sm:w-[70%] md:[60%] lg:w-[35%] mx-auto lg:mx-0 shadow-[0_0_5px_#ddd]"
         >
           <div class="card-body">
             <fieldset class="fieldset">
