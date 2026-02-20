@@ -48,6 +48,38 @@ cartIconDeep.innerText=Number(cartIconDeep.innerText)-1
       }
     }
 
+ const cartDataParentSkeletonChild = getElement("skeleton-container");
+
+if(cartContainer.children.length===1){
+  cartDataParentSkeletonChild.classList.remove('hidden')
+}
+
+// limited discout feature
+
+const getProgressBar=getElement('progress-bar-addtoCart')
+const getLefttoGetDiscount=getElement('discount-left-count')
+const getRemainingProgressValue=getProgressBar.getAttribute('value')
+const progressContainer=getElement('discount-progress-container')
+
+
+
+if(Number(Number(getRemainingProgressValue)===10)){
+  const getDiscountMessage=getElement('discount-message')
+getDiscountMessage.innerText='Ahhh! you missed 20% discount 🥱'
+return
+
+}
+
+const calcProgress=Number(getRemainingProgressValue)-1
+getProgressBar.setAttribute('value',calcProgress)
+
+  const calcLeftDiscount=Number(getLefttoGetDiscount.innerText)+1
+getLefttoGetDiscount.innerText=calcLeftDiscount
+
+
+
+
+
     // warning cart delete
     const warningDiv = document.createElement("div");
     warningDiv.innerHTML = `

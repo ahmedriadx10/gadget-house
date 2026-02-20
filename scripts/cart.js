@@ -1,7 +1,7 @@
 //Products add to cart
 
 const cardParentGet = getElement("products-container");
-let count = 0;
+
 cardParentGet.addEventListener("click", function (event) {
   const clickedButton = event.target;
   if (clickedButton.classList.contains("buy-btn")) {
@@ -51,10 +51,31 @@ cardParentGet.addEventListener("click", function (event) {
 </div> 
 
 `;
+
+    // get discount progress bar
+
+    const getProgressBar = getElement("progress-bar-addtoCart");
+    const getLefttoGetDiscount = getElement("discount-left-count");
+    const getRemainingProgressValue = getProgressBar.getAttribute("value");
+    const progressContainer = getElement("discount-progress-container");
+    const clacProgress = Number(getRemainingProgressValue) + 1;
+
+    if (clacProgress <= 10) {
+      getProgressBar.setAttribute("value", clacProgress);
+      getLefttoGetDiscount.innerText = 10 - clacProgress;
+      if (Number(getLefttoGetDiscount.innerText) === 0) {
+        const newDiscountMessage = document.createElement("p");
+        newDiscountMessage.innerText = `
+If You don't remove cart from your cart list after 24 hours you will get a 20% discount🔥 voucher
+`;
+        newDiscountMessage.classList.add("font-italic", "text-lg", "text-info");
+        newDiscountMessage.setAttribute("id", "discount-message");
+        progressContainer.appendChild(newDiscountMessage);
+      }
+    }
+
     userCartDiv.classList.add("cart-card");
-    count++;
-    cartIcon.innerText = count;
-    cartIconDeep.innerText = count;
+
     setTotalTk(productPriceNumber);
     cartDataParent.appendChild(userCartDiv);
     cartDataParentSkeletonChild.classList.add("hidden");
@@ -72,13 +93,11 @@ cardParentGet.addEventListener("click", function (event) {
     `;
 
     const cartTitleParent = getElement("cart-area-title");
-    cartTitleParent.appendChild(successMessage);
+cartTitleParent.appendChild(successMessage)
 
-    const getAllMinusIcon = document.getElementsByClassName("minus-btn");
+    cartIcon.innerText = getUserCartListUl.children.length - 1;
+    cartIconDeep.innerText = getUserCartListUl.children.length - 1;
 
-    for (const icon of getAllMinusIcon) {
-      icon.parentNode.setAttribute("disabled", true);
-    }
 
     setTimeout(() => {
       const cartTitleParent = getElement("cart-area-title");
