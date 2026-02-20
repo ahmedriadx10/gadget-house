@@ -63,7 +63,7 @@ userCartDiv.classList.add('cart-card')
     cartDataParentSkeletonChild.classList.add("hidden");
     const li = document.createElement("li");
     li.innerHTML = `
-<div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='plus-btn btn h-5 w-5'><i class="fa-solid fa-plus"></i></button><button class='minus-btn btn h-5 w-5'><i class="fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div>
+<div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='btn h-5 w-5'><i class="plus-btn fa-solid fa-plus"></i></button><button class=' btn h-5 w-5'><i class="minus-btn fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div>
 `;
     getUserCartListUl.appendChild(li);
     clickedButton.classList.add('already-clicked')
@@ -73,17 +73,22 @@ userCartDiv.classList.add('cart-card')
   <span>Your product has been added on the cart !</span>
 </div>
     `
-setTimeout(()=>{
-   
+ 
 const cartTitleParent= getElement('cart-area-title')
 cartTitleParent.appendChild(successMessage)
 
+const getAllMinusIcon=document.getElementsByClassName('minus-btn')
 
-},100)
+for(const icon of getAllMinusIcon){
+
+  icon.parentNode.setAttribute('disabled',true)
+}
+
+
     setTimeout(()=>{
       const cartTitleParent= getElement('cart-area-title')
 cartTitleParent.removeChild(successMessage)
 
-    },4000)
+    },2000)
   }
 });

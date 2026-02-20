@@ -32,6 +32,17 @@ const totalShowInCartIcon=getElement('total-cart')
 totalShowInCartIcon.innerText=getTk
 }
 
+function minusMoneyFromDashboradTotal(getMoney){
+ const dashBoardPrice=document.getElementById('user-total-price')
+ const clacMinus=numberConverter(dashBoardPrice.innerText)-getMoney
+ if(clacMinus>=0){
+  dashBoardPrice.innerText=clacMinus 
+   const totalShowInCartIcon=getElement('total-cart')
+totalShowInCartIcon.innerText=clacMinus
+}
+ }
+
+
 
 //     <div class="card card-side   bg-base-100 shadow-sm"> 
 //   <figure>
