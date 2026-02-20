@@ -5,9 +5,8 @@ let count = 0;
 cardParentGet.addEventListener("click", function (event) {
   const clickedButton = event.target;
   if (clickedButton.classList.contains("buy-btn")) {
-
-    if(clickedButton.classList.contains('already-clicked')){
-      return
+    if (clickedButton.classList.contains("already-clicked")) {
+      return;
     }
 
     const mainProductCard = clickedButton.parentNode.parentNode.parentNode;
@@ -29,8 +28,6 @@ cardParentGet.addEventListener("click", function (event) {
     const getUserCartListUl = getElement("user-order-list");
     const cartIcon = getElement("cart-count-show");
     const cartIconDeep = getElement("cart-count-items");
-
-   
 
     const userCartDiv = document.createElement("div");
     userCartDiv.innerHTML = `
@@ -54,7 +51,7 @@ cardParentGet.addEventListener("click", function (event) {
 </div> 
 
 `;
-userCartDiv.classList.add('cart-card')
+    userCartDiv.classList.add("cart-card");
     count++;
     cartIcon.innerText = count;
     cartIconDeep.innerText = count;
@@ -63,32 +60,29 @@ userCartDiv.classList.add('cart-card')
     cartDataParentSkeletonChild.classList.add("hidden");
     const li = document.createElement("li");
     li.innerHTML = `
-<div class="flex justify-between text-lg font-semibold"><span>${productName}</span> <p class='flex justify-center items-center gap-3'><span>${1}</span> <button class='btn h-5 w-5'><i class="plus-btn fa-solid fa-plus"></i></button><button class=' btn h-5 w-5'><i class="minus-btn fa-solid fa-minus"></i></button></p> <span>${productPriceNumber}</span></div>
+<div class="flex justify-between text-lg font-semibold"><span>${productName}</span><span>${productPriceNumber}</span></div>
 `;
     getUserCartListUl.appendChild(li);
-    clickedButton.classList.add('already-clicked')
-    const successMessage=document.createElement('div')
-    successMessage.innerHTML=`
+    clickedButton.classList.add("already-clicked");
+    const successMessage = document.createElement("div");
+    successMessage.innerHTML = `
     <div role="alert" class="alert alert-success alert-soft">
   <span>Your product has been added on the cart !</span>
 </div>
-    `
- 
-const cartTitleParent= getElement('cart-area-title')
-cartTitleParent.appendChild(successMessage)
+    `;
 
-const getAllMinusIcon=document.getElementsByClassName('minus-btn')
+    const cartTitleParent = getElement("cart-area-title");
+    cartTitleParent.appendChild(successMessage);
 
-for(const icon of getAllMinusIcon){
+    const getAllMinusIcon = document.getElementsByClassName("minus-btn");
 
-  icon.parentNode.setAttribute('disabled',true)
-}
+    for (const icon of getAllMinusIcon) {
+      icon.parentNode.setAttribute("disabled", true);
+    }
 
-
-    setTimeout(()=>{
-      const cartTitleParent= getElement('cart-area-title')
-cartTitleParent.removeChild(successMessage)
-
-    },2000)
+    setTimeout(() => {
+      const cartTitleParent = getElement("cart-area-title");
+      cartTitleParent.removeChild(successMessage);
+    }, 2000);
   }
 });
